@@ -1,0 +1,4 @@
+/* frontend/src/index.css */
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
+@import 'tailwindcss';

@@ -1,0 +1,21 @@
+# Python / Django
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+pip-log.txt
+pip-delete-this-for-sure.txt
+.history
+.vscode/
+
+# Django-specific
+*.sqlite3
+db.sqlite3
+/media/
+
+# IDE files (PyCharm, VS Code, etc.)
+.idea/
+.vscode/
