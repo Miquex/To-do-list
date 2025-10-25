@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_URL = 'https://68fc28c0673ad32d9c292b41--react-django-to-do-list.netlify.app/';
+const API_URL = 'https://to-do-list-l7hc.onrender.com/api/tasks/';
 
 export function useTasks() {
   
