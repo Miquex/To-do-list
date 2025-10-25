@@ -20,8 +20,11 @@ if not SECRET_KEY:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['https://to-do-list-l7hc.onrender.com']
-
+ALLOWED_HOSTS = [
+    'to-do-list-l7hc.onrender.com', 
+    'localhost',
+    '127.0.0.1',
+]
 
 # Application definition
 
