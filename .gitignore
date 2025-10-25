@@ -10,7 +10,7 @@ pip-log.txt
 pip-delete-this-for-sure.txt
 .history
 .vscode/
-
+.env
 # Django-specific
 *.sqlite3
 db.sqlite3

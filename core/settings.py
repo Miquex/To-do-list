@@ -1,6 +1,10 @@
 from pathlib import Path
+from dotenv import load_dotenv 
+import os
+from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+load_dotenv()
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -8,10 +12,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-b6s$b(p!pt#t@)p0y*3hquk09o)3%th5o=+l8qltjn&r0!%^f!'
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
+if not SECRET_KEY:
+    raise EnvironmentError("The SECRET_KEY environment variable is not set. Check your .env or Render config.")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = ['https://to-do-list-l7hc.onrender.com']
 
@@ -115,4 +122,11 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOW_ALL_ORIGINS = True #change later
+CORS_ALLOW_ALL_ORIGINS = False #change later
+
+CORS_ALLOWED_ORIGINS = [
+   
+    "http://localhost:5173", 
+    
+    "https://68fc28c0673ad32d9c292b41--react-django-to-do-list.netlify.app", 
+]
